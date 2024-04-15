@@ -1,3 +1,4 @@
+import GameScene from "./components/scenes/GameSene";
 import "./style.css";
 import Phaser from "phaser";
 
@@ -6,23 +7,7 @@ const sizes = {
   height: 500,
 };
 
-const speedDown = 300
-
-class GameScene extends Phaser.Scene {
-  constructor() {
-    super("scene-game");
-  }
-
-  preload() {
-  }
-
-  create() {
-  }
-
-  update() {
-  }
-
-}
+const speedDown = 300;
 
 const config = {
   type: Phaser.WEBGL,
@@ -36,7 +21,7 @@ const config = {
       debug: true,
     },
   },
-  scene: [GameScene],
+  scene: [new GameScene(sizes.height - 50)],
 };
 
 const game = new Phaser.Game(config);
